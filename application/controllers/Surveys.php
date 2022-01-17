@@ -13,10 +13,11 @@ Class Surveys extends CI_Controller{
         $this->load->view('templates/surveys',$data);
     }
     function images(){
+        $objs = $this->survey_image->gets();
         $data = array(
             'actstatus'=>array('surveys'=>'active','installs'=>''),
             'pagetitle'=>$this->uri->segment(1).' / '.$this->uri->segment(2),
-            'objs'=>$this->survey_image->gets()
+            'objs'=>$objs['res']
         );
         $this->load->view('templates/pages/survey_images',$data);
     }

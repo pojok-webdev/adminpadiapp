@@ -96,7 +96,8 @@
   }
   $.ajax({
     url:'/surveys/getimages',
-    dataType:'json'
+    dataType:'json',
+    async:false
   })
   .done(res=>{
     console.log('Res',res)
